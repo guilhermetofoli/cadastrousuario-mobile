@@ -43,5 +43,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     }
 
     //Método 3: Informa ao Android quantos itens a lista possui ao todo
-
+    @Override
+    public int getItemCount(){
+        //Se a lista existir, retorna o tamanho. Se não, retorna zero
+        return listaUsuarios != null ? listaUsuarios.size():0;
+    }
 }
