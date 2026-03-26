@@ -31,4 +31,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         //Retorna uma nova instância da nossa classe interna ViewHolder com a View Criada
         return new ViewHolder(view);
     }
+
+    //Método 2: Vincula os dados de um objeto de lista a uma lnha específica da tela
+    @Override
+    public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position){
+
+    }
 }
