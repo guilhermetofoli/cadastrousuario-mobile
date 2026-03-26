@@ -3,6 +3,7 @@ package com.tofoli.cadastrousuario;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,5 +48,19 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public int getItemCount(){
         //Se a lista existir, retorna o tamanho. Se não, retorna zero
         return listaUsuarios != null ? listaUsuarios.size():0;
+    }
+
+    //Class interna ViewHolder: Servir para "segurar" as referências dos componentes de cada linha
+    //Evitar chamadas respectivas ao findViewById, melhorando a performance do RecycleView
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        //Referência para o TextView da Linha
+        TextView tvNome;
+
+        public ViewHolder(@NonNull View ItemView){
+            super(itemView);
+            //Faz o mapeamento do ID do layout para o objeto JAVA
+            //android.R.id.text1 é o ID padrão do layout 'simple_list_item_1'
+        }
+
     }
 }
