@@ -39,6 +39,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         String nome = listaUsuarios.get(position);
 
         //Define o texto no componente visual que está guardado dentro de 'holder'
-
+        holder.tvNome.setText(nome);
     }
 }
