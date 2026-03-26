@@ -1,5 +1,7 @@
 package com.tofoli.cadastrousuario;
 
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -15,16 +17,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     private List<String> listaUsuarios;
 
     //Construtor que permite que a MainActivity "entregue" a lista de dados para este Adapter
-    public UserAdapter(List<String> lista){
+    public UserAdapter(List<String> lista) {
         this.listaUsuarios = lista;
     }
 
     //Método 1: Cria "do zero" o visual de uma linha da linha (+ViewHolder)
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
-
-
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        //LayoutInflater transforma o arquivo XML em um objeto View Java
+        //Aqui usamos um layout padrão do Android (simple_list_item_1) para facilitar
+        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false)
+        //Retorna uma nova instância da nossa classe interna ViewHolder com a View Criada
+        return new ViewHolder(view);
     }
-
 }
