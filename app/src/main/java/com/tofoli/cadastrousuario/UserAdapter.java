@@ -41,4 +41,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         //Define o texto no componente visual que está guardado dentro de 'holder'
         holder.tvNome.setText(nome);
     }
+
+    //Método 3: Informa ao Android quantos itens a lista possui ao todo
+
 }
