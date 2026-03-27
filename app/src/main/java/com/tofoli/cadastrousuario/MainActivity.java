@@ -1,5 +1,6 @@
 package com.tofoli.cadastrousuario;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -8,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -34,5 +36,33 @@ public class MainActivity extends AppCompatActivity {
         if(listaNomes.isEmpty()){
             listaNomes.add("Nomes de cadastro");
         }
+
+        //Mapeamento dos componentes do RecyclerView do XML para o objeto java
+        recyclerView = findViewById(R.id.recycler_view);
+
+        //Define o LayoutManager: organiza itens da lista nome coluna vertical simples
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //Instancia o adaptador passando a nossa lista de nomes
+        adapter = new UserAdapter(listaNomes);
+
+        //Conecta o adaptador ao RecyclerView para que os dados sejam desenhados na tela
+        recyclerView.setAdapter(adapter);
+
+        //Mapeia o botão de cadastrar
+        btnCadastrar = findViewById(R.id.btnCadastrar);
+
+        //Configura o evento de clique usando a expressão mabda (java 8+)
+        btnCadastrar.setOnClickListener (v -> {
+           startActivity(new Intent(MainActivity.this, CreateUser.class));
+        });
     }
+
+    //Método chamado sempre que a tela volta a ficar visível para o usuário
+    @Override
+    protected void onResume(){
+        super.onResume();
+        //Avisar o adaptador que a fonte de dados (listaNomes) pode ter sido alterado na outra tela
+        //Forçando a atualização visual da lista
+    };
 }
