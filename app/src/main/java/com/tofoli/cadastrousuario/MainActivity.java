@@ -64,5 +64,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         //Avisar o adaptador que a fonte de dados (listaNomes) pode ter sido alterado na outra tela
         //Forçando a atualização visual da lista
+        adapter.notifyDataSetChanged();
     };
 }
