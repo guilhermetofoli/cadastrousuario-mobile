@@ -28,7 +28,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         //LayoutInflater transforma o arquivo XML em um objeto View Java
         //Aqui usamos um layout padrão do Android (simple_list_item_1) para facilitar
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false)
+        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.simple_list_item_1, parent, false);
         //Retorna uma nova instância da nossa classe interna ViewHolder com a View Criada
         return new ViewHolder(view);
     }
@@ -56,7 +56,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         //Referência para o TextView da Linha
         TextView tvNome;
 
-        public ViewHolder(@NonNull View ItemView){
+        public ViewHolder(@NonNull View itemView){
             super(itemView);
             //Faz o mapeamento do ID do layout para o objeto JAVA
             //android.R.id.text1 é o ID padrão do layout 'simple_list_item_1'

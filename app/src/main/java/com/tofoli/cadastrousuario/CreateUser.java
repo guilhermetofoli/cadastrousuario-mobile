@@ -3,9 +3,7 @@ package com.tofoli.cadastrousuario;
 //Bloco de importações
 import android.os.Bundle;
 import android.widget.Button;
-
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.android.material.textfield.TextInputEditText;
 
 //Classe principal
